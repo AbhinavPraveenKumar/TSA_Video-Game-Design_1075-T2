@@ -8,6 +8,7 @@ size = Vector2(45, 112)
 [sub_resource type="SpriteFrames" id="SpriteFrames_wtcfe"]
 
 [sub_resource type="TileSet" id="TileSet_y32ns"]
+resource_name = "level1"
 
 [node name="root" type="Node2D"]
 
