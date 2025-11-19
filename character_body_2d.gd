@@ -21,6 +21,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	# Implements sprint function
 	var sprint := Input.is_action_pressed("sprint")
 	if sprint:
 		SPEED = 450
