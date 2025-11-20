@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://4pqund3nukl7"]
+[gd_scene load_steps=11 format=4 uid="uid://4pqund3nukl7"]
 
 [ext_resource type="Script" uid="uid://bss4mgihbqfdc" path="res://character_body_2d.gd" id="1_kri6t"]
 [ext_resource type="Texture2D" uid="uid://cv8bajit1bbkc" path="res://assets/animations/character/png/placeholder.png" id="2_58htt"]
@@ -61,6 +61,11 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_kri6t")
 sources/0 = SubResource("TileSetAtlasSource_58htt")
 
+[sub_resource type="LabelSettings" id="LabelSettings_kri6t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kri6t"]
+size = Vector2(39, 313.5)
+
 [node name="Level 1-1" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -84,6 +89,28 @@ offset_left = 513.0
 offset_top = 227.0
 offset_right = 553.0
 offset_bottom = 250.0
-text = "Level 1
+text = "Welcome to [game name]!
 Use A/left arrow to go left
 Use D/right arrow to go right"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 149.0
+offset_top = 232.0
+offset_right = 371.0
+offset_bottom = 281.0
+text = "Level 1
+
+The Beginning"
+label_settings = SubResource("LabelSettings_kri6t")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1133.5, 433.75)
+shape = SubResource("RectangleShape2D_kri6t")
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(19, 435)
+shape = SubResource("RectangleShape2D_kri6t")
