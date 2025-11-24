@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=4 uid="uid://4pqund3nukl7"]
+[gd_scene load_steps=12 format=4 uid="uid://4pqund3nukl7"]
 
 [ext_resource type="Script" uid="uid://bss4mgihbqfdc" path="res://character_body_2d.gd" id="1_kri6t"]
 [ext_resource type="Texture2D" uid="uid://cv8bajit1bbkc" path="res://assets/animations/character/png/placeholder.png" id="2_58htt"]
 [ext_resource type="Texture2D" uid="uid://b28jp6hyd0h70" path="res://assets/tilesets/png/level-1_tileset-1.png" id="3_f3wg1"]
+[ext_resource type="Script" uid="uid://ycb748k1ofjk" path="res://scene_transition.gd" id="4_58htt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y32ns"]
 size = Vector2(45, 112)
@@ -68,7 +69,7 @@ size = Vector2(39, 313.5)
 
 [node name="Level 1-1" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["character"]]
 position = Vector2(169, 506)
 script = ExtResource("1_kri6t")
 
@@ -104,6 +105,7 @@ The Beginning"
 label_settings = SubResource("LabelSettings_kri6t")
 
 [node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("4_58htt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(1133.5, 433.75)
