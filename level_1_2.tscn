@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=4 uid="uid://cn4uyvi0mp4k6"]
+[gd_scene load_steps=11 format=4 uid="uid://cn4uyvi0mp4k6"]
 
 [ext_resource type="Texture2D" uid="uid://b28jp6hyd0h70" path="res://assets/tilesets/png/level-1_tileset-1.png" id="1_ss20f"]
+[ext_resource type="Script" uid="uid://ycb748k1ofjk" path="res://scene_transition.gd" id="2_cp15y"]
 [ext_resource type="Script" uid="uid://bss4mgihbqfdc" path="res://character_body_2d.gd" id="2_g5i7g"]
 [ext_resource type="Texture2D" uid="uid://cv8bajit1bbkc" path="res://assets/animations/character/png/placeholder.png" id="3_cp15y"]
 
@@ -84,12 +85,13 @@ position = Vector2(1133.5, 433.75)
 shape = SubResource("RectangleShape2D_g5i7g")
 
 [node name="Area2D2" type="Area2D" parent="."]
+script = ExtResource("2_cp15y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(21, 435)
 shape = SubResource("RectangleShape2D_g5i7g")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["character"]]
 position = Vector2(65, 535)
 script = ExtResource("2_g5i7g")
 

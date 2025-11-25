@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://4pqund3nukl7"]
+[gd_scene load_steps=13 format=4 uid="uid://4pqund3nukl7"]
 
 [ext_resource type="Script" uid="uid://bss4mgihbqfdc" path="res://character_body_2d.gd" id="1_kri6t"]
 [ext_resource type="Texture2D" uid="uid://cv8bajit1bbkc" path="res://assets/animations/character/png/placeholder.png" id="2_58htt"]
@@ -67,6 +67,9 @@ sources/0 = SubResource("TileSetAtlasSource_58htt")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kri6t"]
 size = Vector2(39, 313.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_58htt"]
+size = Vector2(44, 343)
+
 [node name="Level 1-1" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["character"]]
@@ -111,8 +114,9 @@ script = ExtResource("4_58htt")
 position = Vector2(1133.5, 433.75)
 shape = SubResource("RectangleShape2D_kri6t")
 
-[node name="Area2D2" type="Area2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(14, 296)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(19, 435)
-shape = SubResource("RectangleShape2D_kri6t")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(12, 124.5)
+shape = SubResource("RectangleShape2D_58htt")
