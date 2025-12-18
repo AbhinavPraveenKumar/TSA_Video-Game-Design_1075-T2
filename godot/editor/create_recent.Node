@@ -1,8 +1,0 @@
-AudioStreamPlayer
-AnimationPlayer
-CollisionShape2D
-Area2D
-TileMapLayer
-Label
-AnimatedSprite2D
-ShapeCast2D
