@@ -27,3 +27,6 @@ shape = SubResource("RectangleShape2D_wfnr8")
 position = Vector2(1.0000055, 0.49998975)
 scale = Vector2(1.1249999, 3.0468752)
 sprite_frames = SubResource("SpriteFrames_px5sl")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-21, -56, 43, 113)

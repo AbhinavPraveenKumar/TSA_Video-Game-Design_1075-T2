@@ -5,7 +5,7 @@ var SPEED = 300.0
 var JUMP_VELOCITY = -400.0
 var current_health = 100
 var max_health = 100
-
+var scene_num = 1
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():

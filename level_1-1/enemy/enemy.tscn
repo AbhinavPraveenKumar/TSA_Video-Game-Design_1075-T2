@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dm7nrsir14fdc"]
+
+[ext_resource type="Script" uid="uid://dbi34s8v33g1b" path="res://level_1-1/enemy/enemy.gd" id="1_p065h"]
+[ext_resource type="Texture2D" uid="uid://cv8bajit1bbkc" path="res://assets/animations/character/png/placeholder.png" id="2_66ixq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xaro"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4gyqm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_66ixq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="RigidBody2D" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_p065h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7xaro")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.5000005, -0.24999928)
+scale = Vector2(0.546875, 0.5703125)
+sprite_frames = SubResource("SpriteFrames_4gyqm")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
