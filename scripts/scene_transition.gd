@@ -5,7 +5,6 @@ var scene_num=1;
 
 func scene_trans(forward_bool):
 	# print("scene_trans function running") # Debug
-	if area_entered and is_in_group("character"):
 		if forward_bool==true:
 			if level_num==1:
 				if scene_num==1:
@@ -33,5 +32,4 @@ func _ready() -> void:
 # activates scene transition function
 func _process(_delta: float) -> void:
 	# print('working')
-	scene_trans(true);
 	pass
