@@ -26,9 +26,9 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+# activates scene transition function
 func _process(_delta: float) -> void:
 	# print('working')
 	if body_entered and is_in_group("character"):
-		get_tree().change_scene_to_file("res://level_1-1/level_1_2.tscn")
-		print('Scene has been changed')
+		scene_trans(true);
 	pass
