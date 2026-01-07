@@ -110,10 +110,10 @@ text = "Level 1
 The Beginning"
 label_settings = SubResource("LabelSettings_kri6t")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="NextScene" type="Area2D" parent="."]
 script = ExtResource("4_58htt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NextScene"]
 position = Vector2(1133.5, 433.75)
 shape = SubResource("RectangleShape2D_kri6t")
 
