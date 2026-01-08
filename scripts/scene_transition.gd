@@ -2,9 +2,9 @@ extends Area2D
 
 var level_num=1; # move this to a different script when we add a second level
 var scene_num=1;
-
 func scene_trans(forward_bool):
 		print("scene_trans function running") # Debug
+		print("level number: ", level_num, " scene number: ", scene_num)
 		if forward_bool==true:
 			if level_num==1:
 				if scene_num==1:
@@ -22,7 +22,7 @@ func scene_trans(forward_bool):
 					get_tree().change_scene_to_file("res://level_1-1/level_1_2.tscn")
 					scene_num=2;
 		print("Scene transition successful") # Debug
-
+		print("level number: ", level_num, " scene number: ", scene_num)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
