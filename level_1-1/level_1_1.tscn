@@ -129,3 +129,6 @@ shape = SubResource("RectangleShape2D_58htt")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_f3wg1")
 autoplay = true
+
+[connection signal="body_entered" from="NextScene" to="." method="_on_next_scene_body_entered"]
+[connection signal="body_entered" from="NextScene" to="NextScene" method="_on_body_entered"]

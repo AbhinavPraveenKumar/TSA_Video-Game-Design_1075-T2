@@ -78,17 +78,17 @@ offset_right = 752.4861
 offset_bottom = 317.20135
 text = "Use W/up arrow to jump"
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="nextScene" type="Area2D" parent="."]
+script = ExtResource("2_cp15y")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="nextScene"]
 position = Vector2(1133.5, 433.75)
 shape = SubResource("RectangleShape2D_g5i7g")
 
 [node name="Area2D2" type="Area2D" parent="."]
-script = ExtResource("2_cp15y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(21, 435)
+position = Vector2(22, 435)
 shape = SubResource("RectangleShape2D_g5i7g")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["character"]]
