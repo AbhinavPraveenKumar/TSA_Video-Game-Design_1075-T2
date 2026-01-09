@@ -2,6 +2,12 @@ extends Area2D
 
 var level_num=1; # move this to a different script when we add a second level
 var scene_num=1;
+
+func _ready() -> void:
+	var current_scene = get_tree().current_scene
+	
+	print("next scene loaded into scene tree \n level number: ", level_num, " scene number: ", scene_num, " scene path: ", current_scene)
+
 func scene_trans(forward_bool):
 		print("scene_trans function running") # Debug
 		print("level number: ", level_num, " scene number: ", scene_num)
@@ -24,9 +30,6 @@ func scene_trans(forward_bool):
 		print("Scene transition successful") # Debug
 		print("level number: ", level_num, " scene number: ", scene_num)
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 # activates scene transition function

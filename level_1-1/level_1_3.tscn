@@ -71,11 +71,12 @@ tile_map_data = PackedByteArray("AAAAACUAAQAAAAAAAAAAACcAAAAAAAAAAAAAACgAAAAAAAE
 tile_set = SubResource("TileSet_g5i7g")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 712.4861
-offset_top = 294.20135
-offset_right = 752.4861
-offset_bottom = 317.20135
-text = "Use W/up arrow to jump"
+offset_left = 597.0
+offset_top = 307.0
+offset_right = 997.0
+offset_bottom = 356.0
+text = "Hold down Ctrl to  sprint
+Hold down Ctrl and press W/Up Arrow to Long Jump"
 
 [node name="Area2D" type="Area2D" parent="."]
 

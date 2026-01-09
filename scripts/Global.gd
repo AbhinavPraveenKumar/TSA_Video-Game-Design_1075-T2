@@ -1,6 +1,8 @@
-extends "res://scripts/scene_transition.gd"
+extends Node2D
 
-# Called when the node enters the scene tree for the first time.
+var level_num=1; #  dmove this to a different script when we add a second level
+var scene_num=1;
+
 func _ready() -> void:
 	pass # Replace with function body.
 
@@ -8,6 +10,3 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-func _on_body_entered(body: Node2D) -> void:
-	scene_trans(false)
