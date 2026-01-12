@@ -3,6 +3,8 @@ extends Area2D
 var level_num=1; # move this to a different script when we add a second level
 var scene_num=1;
 
+# NOTE: instance NextScene object in instead of keeping it for effiency
+
 func _ready() -> void:
 	var current_scene = get_tree().current_scene
 	

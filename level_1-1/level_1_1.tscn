@@ -1,9 +1,9 @@
-[gd_scene load_steps=13 format=4 uid="uid://4pqund3nukl7"]
+[gd_scene load_steps=12 format=4 uid="uid://4pqund3nukl7"]
 
 [ext_resource type="Script" uid="uid://dflijfiqf7wpu" path="res://scripts/onRunTime.gd" id="1_e3bc2"]
 [ext_resource type="Texture2D" uid="uid://b28jp6hyd0h70" path="res://assets/tilesets/png/level-1_tileset-1.png" id="3_f3wg1"]
 [ext_resource type="Texture2D" uid="uid://cmyvbiy01mqy4" path="res://assets/tilesets/png/level-1_tileset-2.png" id="3_tduq7"]
-[ext_resource type="Script" uid="uid://ycb748k1ofjk" path="res://scripts/scene_transition.gd" id="4_58htt"]
+[ext_resource type="PackedScene" uid="uid://caqsvrv4rsj5p" path="res://next_scene.tscn" id="4_tduq7"]
 [ext_resource type="AudioStream" uid="uid://cfwih02csdveg" path="res://assets/sounds/music/main-theme_v2.mp3" id="5_f3wg1"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kri6t"]
@@ -39,9 +39,6 @@ sources/1 = SubResource("TileSetAtlasSource_qe2hf")
 
 [sub_resource type="LabelSettings" id="LabelSettings_kri6t"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kri6t"]
-size = Vector2(39, 313.5)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_58htt"]
 size = Vector2(44, 343)
 
@@ -71,12 +68,7 @@ text = "Level 1
 The Beginning"
 label_settings = SubResource("LabelSettings_kri6t")
 
-[node name="NextScene" type="Area2D" parent="."]
-script = ExtResource("4_58htt")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NextScene"]
-position = Vector2(1133.5, 433.75)
-shape = SubResource("RectangleShape2D_kri6t")
+[node name="NextScene" parent="." instance=ExtResource("4_tduq7")]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(14, 296)
@@ -90,6 +82,3 @@ shape = SubResource("RectangleShape2D_58htt")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_f3wg1")
 autoplay = true
-
-[connection signal="body_entered" from="NextScene" to="." method="_on_next_scene_body_entered"]
-[connection signal="body_entered" from="NextScene" to="NextScene" method="_on_body_entered"]
