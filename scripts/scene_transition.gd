@@ -14,18 +14,18 @@ func scene_trans(forward_bool):
 		if forward_bool==true:
 			if level_num==1:
 				if scene_num==1:
-					get_tree().change_scene_to_file("res://level_1-1/level_1_2.tscn")
+					get_tree().call_deferred("change_scene_to_file", "res://level_1-1/level_1_2.tscn")
 					scene_num=2;
 				elif scene_num==2:
-					get_tree().change_scene_to_file("res://level_1-1/level_1_3.tscn")
+					get_tree().call_deferred("change_scene_to_file", "res://level_1-1/level_1_3.tscn")
 					scene_num=3;
 		elif forward_bool==false:
 			if level_num==1:
 				if scene_num==2:
-					get_tree().change_scene_to_file("res://level_1-1/level_1_1.tscn")
+					get_tree().call_deferred("change_scene_to_file", "res://level_1-1/level_1_1.tscn")
 					scene_num=1;
 				elif scene_num==3:
-					get_tree().change_scene_to_file("res://level_1-1/level_1_2.tscn")
+					get_tree().call_deferred("change_scene_to_file", "res://level_1-1/level_1_2.tscn")
 					scene_num=2;
 		print("Scene transition successful") # Debug
 		print("level number: ", level_num, " scene number: ", scene_num)
