@@ -6,7 +6,7 @@ var scene_trans_scene = preload("res://next_scene.tscn")
 var scene_trans_scene_instantiate = scene_trans_scene.instantiate()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	character_instance.position = Vector2(65, 535)
+	character_instance.position = Vector2(165, 535)
 	add_child(character_instance)
 
 
