@@ -1,15 +1,27 @@
 extends Area2D
 
 # NOTE: instance NextScene object in instead of keeping it for effiency
-func _ready():
-	var current_scenePath = str(get_tree().current_scene)
-	# print("next scene loaded into scene tree \n level number: ", level_num, " scene number: ", scene_num, " scene path: ", current_scene)
-	return current_scenePath
-
-var current_scenePath = _ready()
-var scene_numString = current_scenePath[8]
+signal loaded
+func _ready() -> void:
+	var current_scene=str(get_tree().current_scene)
+	var level_numString = current_scene[6]
+	var scene_numString = current_scene[8]
+	print(level_numString)
+	print(scene_numString)
+	print("next scene loaded into scene tree \n level number: ", level_num, " scene number: ", scene_numString, " scene path: ", current_scene)
+	if current_scene=="Level 1-1:<Node2D#28974253463>":
+		loaded.emit()
+	pass
+#func _on_loaded():
+#	await get_tree().ready
+#	var current_scene=str(get_tree().current_scene)
+#	var level_numString = current_scene[6]
+#	var scene_numString = current_scene[8]
+#	return current_scene
+#@onready var current_scenePath = str(get_tree().current_scene)
+#var scene_numString = current_scenePath[8]
 var level_num=1
-var scene_num=int(scene_numString)
+var scene_num=1 #int(scene_numString)
 func scene_trans(forward_bool):
 		print("scene_trans function running") # Debug
 		print("level number: ", level_num, " scene number: ", scene_num)
@@ -34,8 +46,6 @@ func scene_trans(forward_bool):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 # activates scene transition function
 func _process(_delta: float) -> void:
-	if _delta==1:
-		pass
 	pass
 	
 

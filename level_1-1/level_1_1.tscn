@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=4 uid="uid://4pqund3nukl7"]
+[gd_scene load_steps=11 format=4 uid="uid://4pqund3nukl7"]
 
 [ext_resource type="Script" uid="uid://dflijfiqf7wpu" path="res://scripts/onRunTime.gd" id="1_e3bc2"]
 [ext_resource type="Texture2D" uid="uid://b28jp6hyd0h70" path="res://assets/tilesets/png/level-1_tileset-1.png" id="3_f3wg1"]
 [ext_resource type="Texture2D" uid="uid://cmyvbiy01mqy4" path="res://assets/tilesets/png/level-1_tileset-2.png" id="3_tduq7"]
-[ext_resource type="PackedScene" uid="uid://caqsvrv4rsj5p" path="res://next_scene.tscn" id="4_tduq7"]
 [ext_resource type="AudioStream" uid="uid://cfwih02csdveg" path="res://assets/sounds/music/main-theme_v2.mp3" id="5_f3wg1"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kri6t"]
@@ -67,8 +66,6 @@ text = "Level 1
 
 The Beginning"
 label_settings = SubResource("LabelSettings_kri6t")
-
-[node name="NextScene" parent="." instance=ExtResource("4_tduq7")]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(14, 296)

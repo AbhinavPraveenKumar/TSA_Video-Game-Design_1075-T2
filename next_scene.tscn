@@ -1,25 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://caqsvrv4rsj5p"]
+[gd_scene load_steps=3 format=3 uid="uid://caqsvrv4rsj5p"]
 
 [ext_resource type="Script" uid="uid://ycb748k1ofjk" path="res://scripts/scene_transition.gd" id="1_uyfcs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kri6t"]
 size = Vector2(39, 313.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyfcs"]
-size = Vector2(44, 343)
-
 [node name="NextScene" type="Area2D"]
 script = ExtResource("1_uyfcs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1133.5, 433.75)
 shape = SubResource("RectangleShape2D_kri6t")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(14, 296)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(13, 124.5)
-shape = SubResource("RectangleShape2D_uyfcs")
-
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="loaded" from="." to="." method="_on_loaded"]
