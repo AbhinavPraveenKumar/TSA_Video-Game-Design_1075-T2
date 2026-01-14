@@ -9,7 +9,7 @@ func _ready() -> void:
 	print(level_numString)
 	print(scene_numString)
 	print("next scene loaded into scene tree \n level number: ", level_num, " scene number: ", scene_numString, " scene path: ", current_scene)
-	if current_scene=="Level 1-1:<Node2D#28974253463>":
+	if str(current_scene)=="Level 1-1:<Node2D#28974253463>":
 		loaded.emit()
 	pass
 #func _on_loaded():
@@ -53,3 +53,4 @@ func _process(_delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		scene_trans(true)
+		# Global.game_controller.change_2d_scene()
