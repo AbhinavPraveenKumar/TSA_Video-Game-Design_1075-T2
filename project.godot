@@ -19,6 +19,7 @@ config/icon="uid://ruyx3svcaiw6"
 
 SceneTransitioner="*res://scripts/scene_transition.gd"
 Global="*res://scripts/Global.gd"
+Gamecontroller="*res://scripts/gamecontroller.gd"
 
 [input]
 

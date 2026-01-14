@@ -10,7 +10,7 @@ func _ready() -> void:
 	add_child(character_instance)
 	scene_trans_scene_instantiate.position = Vector2(1133.5, 433.75)
 	add_child(scene_trans_scene_instantiate)
-
+@onready var scene_path=str(get_tree().current_scene)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
