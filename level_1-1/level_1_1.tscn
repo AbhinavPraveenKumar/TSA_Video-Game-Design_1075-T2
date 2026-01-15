@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dflijfiqf7wpu" path="res://scripts/onRunTime.gd" id="1_e3bc2"]
 [ext_resource type="Texture2D" uid="uid://b28jp6hyd0h70" path="res://assets/tilesets/png/level-1_tileset-1.png" id="3_f3wg1"]
 [ext_resource type="Texture2D" uid="uid://cmyvbiy01mqy4" path="res://assets/tilesets/png/level-1_tileset-2.png" id="3_tduq7"]
-[ext_resource type="AudioStream" uid="uid://cfwih02csdveg" path="res://assets/sounds/music/main-theme_v2.mp3" id="5_f3wg1"]
+[ext_resource type="AudioStream" uid="uid://gj5w7jlv8mf8" path="res://assets/sounds/music/main_theme-v3.mp3" id="4_nmhxd"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kri6t"]
 
@@ -77,5 +77,5 @@ shape = SubResource("RectangleShape2D_58htt")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_f3wg1")
+stream = ExtResource("4_nmhxd")
 autoplay = true

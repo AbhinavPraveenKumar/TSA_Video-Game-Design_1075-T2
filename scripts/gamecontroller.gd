@@ -21,13 +21,14 @@ func change_gui_scene(new_scene: String, delete: bool = true, keep_running: bool
 	gui.add_child(new)
 	current_gui_scene=new
 
-func change_2d_scene(new_scene: String, delete: bool = true, keep_running: bool=false) -> void:
-	if current_2d_scene != null:
-		if delete:
-			current_2d_scene.queue_free()
-		elif keep_running:
-			gui.remove_child(current_2d_scene)
-	await get_tree().scene_changed
-	var new = load(new_scene).instantiate()
-	world2d.add_child(new)
-	current_gui_scene=new
+#func change_2d_scene(new_scene: String, delete: bool = true, keep_running: bool=false) -> void:
+#	if current_2d_scene != null:
+#		if delete:
+#			current_2d_scene.queue_free()
+#		elif keep_running:
+#			gui.remove_child(current_2d_scene)
+#	# await get_tree().scene_changed
+#	var new = load(new_scene).instantiate()
+#	await get_tree().scene_changed
+#	world2d.add_child(new)
+#	current_gui_scene=new

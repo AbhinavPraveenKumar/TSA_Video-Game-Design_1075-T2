@@ -28,15 +28,15 @@ func scene_trans(forward_bool):
 		if forward_bool==true:
 			if level_num=="res://level_1-1/":
 				if scene_num=="res://level_1-1/level_1_1.tscn":
-					Gamecontroller.change_2d_scene("res://level_1-1/level_1_2.tscn", false)
+					get_tree().call_deferred("change_scene_to_file", "res://level_1-1/level_1_2.tscn")
 				elif scene_num=="res://level_1-1/level_1_2.tscn":
-					Gamecontroller.change_2d_scene("res://level_1-1/level_1_3.tscn", false)
+					get_tree().call_deferred("change_scene_to_file", "res://level_1-1/level_1_3.tscn")
 		elif forward_bool==false:
 			if level_num=="res://level_1-1/":
 				if scene_num=="res://level_1-1/level_1_2.tscn":
-					Gamecontroller.change_2d_scene("res://level_1-1/level_1_1.tscn", false)
+					get_tree().call_deferred("change_scene_to_file", "res://level_1-1/level_1_1.tscn")
 				elif scene_num=="res://level_1-1/level_1_2.tscn":
-					Gamecontroller.change_2d_scene("res://level_1-1/level_1_2.tscn", false)
+					get_tree().call_deferred("change_scene_to_file", "res://level_1-1/level_1_2.tscn")
 		print("Scene transition successful") # Debug
 		print("level number: ", level_num, " scene number: ", scene_num)
 # Called when the node enters the scene tree for the first time.
