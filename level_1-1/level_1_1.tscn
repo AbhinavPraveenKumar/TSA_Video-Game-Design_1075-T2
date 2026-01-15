@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=4 uid="uid://4pqund3nukl7"]
+[gd_scene load_steps=10 format=4 uid="uid://4pqund3nukl7"]
 
 [ext_resource type="Script" uid="uid://dflijfiqf7wpu" path="res://scripts/onRunTime.gd" id="1_e3bc2"]
 [ext_resource type="Texture2D" uid="uid://b28jp6hyd0h70" path="res://assets/tilesets/png/level-1_tileset-1.png" id="3_f3wg1"]
 [ext_resource type="Texture2D" uid="uid://cmyvbiy01mqy4" path="res://assets/tilesets/png/level-1_tileset-2.png" id="3_tduq7"]
-[ext_resource type="AudioStream" uid="uid://gj5w7jlv8mf8" path="res://assets/sounds/music/main_theme-v3.mp3" id="4_nmhxd"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kri6t"]
 
@@ -53,7 +52,7 @@ offset_left = 513.0
 offset_top = 227.0
 offset_right = 553.0
 offset_bottom = 250.0
-text = "Welcome to the Untitled Platformer!
+text = "Welcome to Grassthrough!
 Use A/left arrow to go left
 Use D/right arrow to go right"
 
@@ -75,7 +74,3 @@ position = Vector2(12, 124.5)
 shape = SubResource("RectangleShape2D_58htt")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_nmhxd")
-autoplay = true

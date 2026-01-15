@@ -20,6 +20,7 @@ config/icon="uid://ruyx3svcaiw6"
 SceneTransitioner="*res://scripts/scene_transition.gd"
 Global="*res://scripts/Global.gd"
 Gamecontroller="*res://scripts/gamecontroller.gd"
+GlobalAudioStreamPlayer="*res://level_1-1/audio_stream_player.tscn"
 
 [input]
 

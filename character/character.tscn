@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://da2dtxq855ogv"]
+[gd_scene load_steps=9 format=3 uid="uid://da2dtxq855ogv"]
 
 [ext_resource type="Script" uid="uid://bss4mgihbqfdc" path="res://character_body_2d.gd" id="1_pjt0s"]
 [ext_resource type="Texture2D" uid="uid://drghgqlrdcgnt" path="res://assets/animations/character/png/character_spritesheet.png" id="2_ugqs2"]
 [ext_resource type="Texture2D" uid="uid://cv8bajit1bbkc" path="res://assets/animations/character/png/placeholder.png" id="2_wa5vi"]
+[ext_resource type="Texture2D" uid="uid://ruyx3svcaiw6" path="res://icon.png" id="4_hx151"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wfnr8"]
 size = Vector2(67, 69)
@@ -35,6 +36,14 @@ animations = [{
 "loop": true,
 "name": &"default_placeholder",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_hx151")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["character"]]
@@ -45,7 +54,7 @@ position = Vector2(-1.5, -0.5)
 shape = SubResource("RectangleShape2D_wfnr8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1.9073486e-06, 0)
+position = Vector2(1, 0)
 scale = Vector2(2.7499998, 3.0468752)
 sprite_frames = SubResource("SpriteFrames_px5sl")
-frame_progress = 0.38032347
+animation = &"idle"

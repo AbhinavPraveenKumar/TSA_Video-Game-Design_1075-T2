@@ -78,12 +78,6 @@ offset_bottom = 356.0
 text = "Hold down Ctrl to  sprint
 Hold down Ctrl and press W/Up Arrow to Long Jump"
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1133.5, 433.75)
-shape = SubResource("RectangleShape2D_g5i7g")
-
 [node name="Area2D2" type="Area2D" parent="."]
 script = ExtResource("2_eupm0")
 

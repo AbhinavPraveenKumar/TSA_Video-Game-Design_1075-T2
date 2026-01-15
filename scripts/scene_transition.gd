@@ -1,54 +1,49 @@
 extends Area2D
 
-# NOTE: instance NextScene object in instead of keeping it for effiency
 signal loaded
-func _ready() -> void:
-	var current_scene=str(get_tree().current_scene)
-	var level_numString = current_scene[6]
-	var scene_numString = current_scene[8]
-	print(level_numString)
-	print(scene_numString)
-	print("next scene loaded into scene tree \n level number: ", level_num, " scene number: ", scene_numString, " scene path: ", current_scene)
-	if str(current_scene)=="Level 1-1:<Node2D#28974253463>":
-		loaded.emit()
-	pass
-#func _on_loaded():
-#	await get_tree().ready
-#	var current_scene=str(get_tree().current_scene)
-#	var level_numString = current_scene[6]
-#	var scene_numString = current_scene[8]
-#	return current_scene
-#@onready var current_scenePath = str(get_tree().current_scene)
-#var scene_numString = current_scenePath[8]
-var level_num:="res://level_1-1/"
-var scene_num:="res://level_1-1/level_1_1.tscn" #int(scene_numString)
-func scene_trans(forward_bool):
-		print("scene_trans function running") # Debug
-		print("level number: ", level_num, " scene number: ", scene_num)
-		if forward_bool==true:
-			if level_num=="res://level_1-1/":
-				if scene_num=="res://level_1-1/level_1_1.tscn":
-					get_tree().call_deferred("change_scene_to_file", "res://level_1-1/level_1_2.tscn")
-				elif scene_num=="res://level_1-1/level_1_2.tscn":
-					get_tree().call_deferred("change_scene_to_file", "res://level_1-1/level_1_3.tscn")
-		elif forward_bool==false:
-			if level_num=="res://level_1-1/":
-				if scene_num=="res://level_1-1/level_1_2.tscn":
-					get_tree().call_deferred("change_scene_to_file", "res://level_1-1/level_1_1.tscn")
-				elif scene_num=="res://level_1-1/level_1_2.tscn":
-					get_tree().call_deferred("change_scene_to_file", "res://level_1-1/level_1_2.tscn")
-		print("Scene transition successful") # Debug
-		print("level number: ", level_num, " scene number: ", scene_num)
-# Called when the node enters the scene tree for the first time.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-# activates scene transition function
-func _process(_delta: float) -> void:
-	pass
+var level_num := ""
+var scene_num := ""
+
+func _ready():
+	loaded.emit()
+	_update_scene_info()
+
+func _update_scene_info():
+	var scene_path := get_tree().current_scene.scene_file_path
+	# Example: res://level_1-1/level_1_2.tscn
 	
+	var parts := scene_path.split("/")
+	# ["res:", "", "level_1-1", "level_1_2.tscn"]
+	
+	level_num = parts[2] # "level_1-1"
+	scene_num = parts[3].replace(".tscn", "") # "level_1_2"
+
+func scene_trans(forward: bool):
+	_update_scene_info()
+	print("scene_trans running")
+	print("level:", level_num, " scene:", scene_num)
+
+	if level_num == "level_1-1":
+		if forward:
+			if scene_num == "level_1_1":
+				_change_scene("res://level_1-1/level_1_2.tscn")
+			elif scene_num == "level_1_2":
+				_change_scene("res://level_1-1/level_1_3.tscn")
+			elif scene_num == "level_1_3":
+				_change_scene("res://level_1-1/level_1_4.tscn")
+		else:
+			if scene_num == "level_1_2":
+				_change_scene("res://level_1-1/level_1_1.tscn")
+
+func _change_scene(path: String):
+	print("Changing to:", path)
+	get_tree().call_deferred("change_scene_to_file", path)
+
+func _process(_delta: float) -> void:
+	print(scene_num)
 
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		scene_trans(true)
-		# Global.game_controller.change_2d_scene()
